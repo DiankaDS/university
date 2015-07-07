@@ -1,4 +1,4 @@
 from django.contrib import admin
-from group.models import Groups
+from group.models import Group
 
-admin.site.register(Groups)
+admin.site.register(Group)

@@ -1,11 +1,11 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-from student.models import Students
+from student.models import Student
 
 
-class Groups(models.Model):
+class Group(models.Model):
     group_name = models.CharField(max_length=10)
-    elder = models.OneToOneField(Students, related_name="elder", null=True,
+    elder = models.OneToOneField(Student, related_name="elder", null=True,
                                  blank=True)
 
     def __str__(self):
@@ -15,4 +15,4 @@ class Groups(models.Model):
         if self.elder and self.elder.group != self:
             raise ValidationError(
                 "You can not make this student elder, it is from other group")
-        return super(Groups, self).clean()
+        return super(Group, self).clean()
