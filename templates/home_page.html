@@ -9,7 +9,7 @@
     {% if request.user.username %}
         <p>You are {{ request.user.username }} <a href="{% url 'logout' %}"><button>Logout</button></a></p>
     {% else %}
-        <p>You are Guest. Please, <a href="{% url 'login' %}">log in</a></p>
+        <p>You are Guest. Please, <a href="{% url 'login' %}">login</a> or <a href="{% url 'reg' %}">registration</a>.</p>
     {% endif %}
 </body>
 </html>
