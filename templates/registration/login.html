@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Log in</h1>
+    <form method="post">{% csrf_token %}
+            {% for field in form %}
+                <p>{{ field.name }}:
+                    {{ field }}</p>
+            {% endfor %}
+        <button type="submit">Log in</button>
+    </form>
+</body>
+</html>
