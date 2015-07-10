@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <title>Home page</title>
     <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
-    <h1>Welcome to University!</h1>
-    {% if request.user.username %}
-        <p>You are {{ request.user.username }} <a href="{% url 'logout' %}"><button>Logout</button></a></p>
-    {% else %}
-        <p>You are Guest. Please, <a href="{% url 'login' %}">login</a> or <a href="{% url 'reg' %}">registration</a>.</p>
-    {% endif %}
+    <div class="container">
+        <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="label-mine">
+                    <h1>Welcome to University!</h1>
+                </div>
+            <div class="home-text-mine">
+                {% if request.user.username %}
+                    <p>You are {{ request.user.username }} <a href="{% url 'logout' %}"><button>Logout</button></a></p>
+                {% else %}
+                    <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>
+                {% endif %}
+            </div>
+            </div>
+        <div class="col-md-2"></div>
+    </div>
 </body>
 </html>
