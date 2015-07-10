@@ -113,3 +113,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+STATIC_ROOT = 'static/bootstrap'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

@@ -3,7 +3,9 @@ from django.contrib.auth import get_user_model
 
 
 class RegistrationForm(forms.ModelForm):
-    repeat_password = forms.CharField(required=True)
+    repeat_password = forms.CharField(widget=forms.PasswordInput,
+                                      required=True)
+    password = forms.CharField(widget=forms.PasswordInput, required=True)
 
     class Meta:
         model = get_user_model()
