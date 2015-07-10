@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "core.css" %}>
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="label-mine">
+                <h1>Information about student {{ student.last_name }}</h1>
+            </div>
+            <div class="text-center">
+                <p>Last name: {{ student.last_name }}</p>
+                <p>First name: {{ student.first_name }}</p>
+                <p>Middle name: {{ student.middle_name }}</p>
+                <p>Year of birth: {{ student.year_of_birth }}</p>
+                <p>Student id: {{ student.student_id }}</p>
+                <p>Group: {{ student.group }}</p>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</body>
+</html>

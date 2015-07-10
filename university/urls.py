@@ -15,4 +15,5 @@ urlpatterns = [
         template_name="registration/success_registration.html"),
         name="success_reg"),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^students/', include('student.urls', namespace='students')),
 ]
