@@ -1,11 +1,24 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>completed</title>
+    <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
-    <h1>REGISTRATION COMPLETE</h1>
-    <a href="{% url "home_page" %}">Home page</a>
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="label-mine">
+                <h1>REGISTRATION COMPLETE</h1>
+            </div>
+            <div class="text-center">
+                <ins><a href="{% url "home_page" %}">Home page</a></ins>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </body>
 </html>

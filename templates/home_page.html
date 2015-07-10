@@ -10,18 +10,20 @@
 <body>
     <div class="container">
         <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="label-mine">
-                    <h1>Welcome to University!</h1>
-                </div>
-            <div class="home-text-mine">
+        <div class="col-md-8">
+            <div class="label-mine">
+                <h1>Welcome to University!</h1>
+            </div>
+            <div class="text-center">
                 {% if request.user.username %}
-                    <p>You are {{ request.user.username }} <a href="{% url 'logout' %}"><button>Logout</button></a></p>
+                    <div class="text-right">
+                    <p>You are {{ request.user.username }} <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
+                    </div>
                 {% else %}
-                    <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>
+                    <p>You are Guest. Please, <ins><a href="{% url 'login' %}">sign in</a></ins> or <ins><a href="{% url 'reg' %}">sign up</a></ins>.</p>
                 {% endif %}
             </div>
-            </div>
+        </div>
         <div class="col-md-2"></div>
     </div>
 </body>

@@ -1,17 +1,31 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Sign in</title>
+    <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
-    <h1>Log in</h1>
-    <form method="post">{% csrf_token %}
-            {% for field in form %}
-                <p>{{ field.name }}:
-                    {{ field }}</p>
-            {% endfor %}
-        <button type="submit">Log in</button>
-    </form>
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="label-mine">
+                <h1>Sign in to continue</h1>
+            </div>
+            <div class="text-right">
+            <form method="post">{% csrf_token %}
+                    {% for field in form %}
+                        <p>{{ field.name }}:
+                            {{ field }}
+                        <code>{{ field.errors }}</code></p>
+                    {% endfor %}
+                <button type="submit" class="btn btn-success">Log in</button>
+            </form>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </body>
 </html>
