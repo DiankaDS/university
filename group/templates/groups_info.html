@@ -20,7 +20,7 @@
                 <td>{{ student.last_name }}</td>
                 <td>{{ student.first_name }}</td>
                 <td>{{ student.middle_name }}</td>
-             <td><button type="button" class="btn btn-info"><a href="{% url 'students:info' student.id %}">View</a></button></td>
+             <td><button type="button" class="btn btn-info" onclick="location.href='{% url 'students:info' student.id %}'">View</button></td>
             </tr>
         {% endfor %}
     </table>

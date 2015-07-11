@@ -19,13 +19,13 @@
             <td>{{ group.group_name }}</td>
             <td>{{ group.student_set.count }}</td>
             <td>{{ group.elder }}</td>
-            <td><button type="button" class="btn btn-info"><a href="{% url 'groups:info' group.id %}">View</a></button>
-            <button type="button" class="btn btn-warning"><a href="{% url 'groups:update' group.id %}">Update</a></button>
-            <button type="button" class="btn btn-danger"><a href="{% url 'groups:delete' group.id %}">Delete</a></button></td>
+            <td><button type="button" class="btn btn-info" onclick="location.href='{% url 'groups:info' group.id %}'">View</button>
+            <button type="button" class="btn btn-warning" onclick="location.href='{% url 'groups:update' group.id %}'">Update</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='{% url 'groups:delete' group.id %}'">Delete</button></td>
         </tr>
     {% endfor %}
     </table>
-    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{% url 'groups:create' %}">Create new group</a></button>
+    <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'groups:create' %}'">Create new group</button>
 {% else %}
     <p>No groups are available.</p>
 {% endif %}
