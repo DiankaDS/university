@@ -22,10 +22,13 @@
                     <h4>Would you like work with:</h4>
                     <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'students:students' %}'">Students</button>
                     <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'groups:groups' %}'">Groups</button>
-                {% else %}
-                    <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>
-                {% endif %}
                     </div>
+                {% else %}
+                    <div class="basic-mine">
+                    <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>
+                    </div>
+                {% endif %}
+
             <div class="label-mine">
                 <p class="text-info"><strong>Have a nice day :)</strong></p>
             </div>
