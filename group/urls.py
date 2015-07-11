@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.decorators import login_required
 from group.views import GroupsListView, GroupsInfoView, GroupUpdateView, \
-    GroupDeleteView
+    GroupDeleteView, GroupCreateView
 
 urlpatterns = patterns(
     '',
@@ -12,4 +12,6 @@ urlpatterns = patterns(
         name="update"),
     url(r'(?P<pk>\d+)/delete/$', login_required(GroupDeleteView.as_view()),
         name="delete"),
+    url(r'create_group$', login_required(GroupCreateView.as_view()),
+        name="create"),
 )
