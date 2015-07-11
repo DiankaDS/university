@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "core.css" %}>
+</head>
+<body>
+     <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+             <div class="text-right">
+                <p class="text-muted">{{ request.user.username }} <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
+            </div>
+            {% block body %}
+            {% endblock %}
+            <div class="label-mine">
+                <p><strong><a href="{% url 'home_page' %}">Back to home page</a></strong></p>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</body>
+</html>

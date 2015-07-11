@@ -19,11 +19,14 @@
                     <div class="text-right">
                     <p class="text-muted">You are {{ request.user.username }} <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
                     </div>
+                    <h4>Would you like work with:</h4>
+                    <p><a href={% url "students:students" %}>Students</a></p>
+            </div>
                 {% else %}
-                    <p>You are Guest. Please, <ins><a href="{% url 'login' %}">sign in</a></ins> or <ins><a href="{% url 'reg' %}">sign up</a></ins>.</p>
+                    <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>
                 {% endif %}
-                <h4>Would you like work with:</h4>
-                <p><ins><a href={% url "students:students" %}>Students</a></ins></p>
+            <div class="label-mine">
+                <p class="text-info"><strong>Have a nice day</strong></p>
             </div>
         </div>
         <div class="col-md-2"></div>

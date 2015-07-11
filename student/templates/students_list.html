@@ -1,32 +1,20 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "basic.html" %}
+{% block title %}
     <title>Students</title>
-    <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
-    <link rel="stylesheet" href={% static "core.css" %}>
-</head>
-<body>
-    <div class="container">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="label-mine">
-                <h1>Students List</h1>
-            </div>
-            <div class="text-center">
-                {% if object_list %}
-                    <ul>
-                    {% for student in object_list %}
-                        <li><a href="{% url 'students:info' student.student_id %}">{{ student.last_name }}</a></li>
-                    {% endfor %}
-                    </ul>
-                {% else %}
-                    <p>No students are available.</p>
-                {% endif %}
-            </div>
-        </div>
-        <div class="col-md-2"></div>
+{% endblock %}
+{% block body %}
+    <div class="label-mine">
+        <h1>Students List</h1>
     </div>
-</body>
-</html>
+    <div class="text-center">
+        {% if object_list %}
+            <ul>
+                {% for student in object_list %}
+                    <li><a href="{% url 'students:info' student.student_id %}">{{ student.last_name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No students are available.</p>
+        {% endif %}
+    </div>
+{% endblock %}
