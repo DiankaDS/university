@@ -12,12 +12,15 @@
         <th>Group</th>
         <th>Students</th>
         <th>Elder</th>
+        <th>Operations</th>
     </tr>
     {% for group in object_list %}
         <tr>
-            <td><a href="{% url 'groups:info' group.id %}">{{ group.group_name }}</a></td>
+            <td>{{ group.group_name }}</td>
             <td>{{ group.student_set.count }}</td>
             <td>{{ group.elder }}</td>
+            <td><button type="button" class="btn btn-info"><a href="{% url 'groups:info' group.id %}">View</a></button>
+            <button type="button" class="btn btn-warning"><a href="{% url 'groups:update' group.id %}">Update</a></button></td>
         </tr>
     {% endfor %}
     </table>
