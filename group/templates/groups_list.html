@@ -6,27 +6,29 @@
     <div class="label-mine">
         <h1>Groups List</h1>
     </div>
+    <div class="basic-mine">
         {% if object_list %}
-    <table class="table" border = "1">
-    <tr>
-        <th>Group</th>
-        <th>Students</th>
-        <th>Elder</th>
-        <th>Operations</th>
-    </tr>
-    {% for group in object_list %}
-        <tr>
-            <td>{{ group.group_name }}</td>
-            <td>{{ group.student_set.count }}</td>
-            <td>{{ group.elder }}</td>
-            <td><button type="button" class="btn btn-info" onclick="location.href='{% url 'groups:info' group.id %}'">View</button>
-            <button type="button" class="btn btn-warning" onclick="location.href='{% url 'groups:update' group.id %}'">Update</button>
-            <button type="button" class="btn btn-danger" onclick="location.href='{% url 'groups:delete' group.id %}'">Delete</button></td>
-        </tr>
-    {% endfor %}
-    </table>
-    <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'groups:create' %}'">Create new group</button>
-{% else %}
-    <p>No groups are available.</p>
-{% endif %}
+            <table class="table" border = "1">
+            <tr>
+                <th>Group</th>
+                <th>Students</th>
+                <th>Elder</th>
+                <th>Operations</th>
+            </tr>
+            {% for group in object_list %}
+                <tr>
+                    <td>{{ group.group_name }}</td>
+                    <td>{{ group.student_set.count }}</td>
+                    <td>{{ group.elder }}</td>
+                    <td><button type="button" class="btn btn-info" onclick="location.href='{% url 'groups:info' group.id %}'">View</button>
+                    <button type="button" class="btn btn-warning" onclick="location.href='{% url 'groups:update' group.id %}'">Update</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='{% url 'groups:delete' group.id %}'">Delete</button></td>
+                </tr>
+            {% endfor %}
+            </table>
+            <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'groups:create' %}'">Create new group</button>
+        {% else %}
+            <p>No groups are available.</p>
+        {% endif %}
+    </div>
 {% endblock %}

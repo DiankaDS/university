@@ -14,12 +14,11 @@
             <div class="label-mine">
                 <h1>Registration</h1>
             </div>
-            <div class="text-right">
+            <div class="form-mine">
             <form method="post">{% csrf_token %}
             {% for field in form %}
-                <p>{{ field.name }}:
-                    <code>{{ field.errors }}</code>
-                    {{ field }} </p>
+                <input class="form-control" placeholder={{ field.name }} for={{ field }}
+                <p><code>{{ field.errors }}</code></p>
             {% endfor %}
                 <button type="submit" class="btn btn-success">Save me</button>
             </form>

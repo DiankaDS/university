@@ -6,7 +6,7 @@
     <div class="label-mine">
         <h1>Delete student {{ student.student_id }}</h1>
     </div>
-    <div class="text-center">
+    <div class="basic-mine">
         <form action="" method="post">{% csrf_token %}
             <p>Are you sure you want to delete {{ object }}?</p>
             <button type="submit" class="btn btn-danger">Yes, delete it</button>

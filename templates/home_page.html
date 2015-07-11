@@ -14,20 +14,20 @@
             <div class="label-mine">
                 <h1>Welcome to University!</h1>
             </div>
-            <div class="text-center">
                 {% if request.user.username %}
                     <div class="text-right">
                     <p class="text-muted">You are {{ request.user.username }} <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
                     </div>
+                    <div class="basic-mine">
                     <h4>Would you like work with:</h4>
-                    <p><a href={% url "students:students" %}>Students</a></p>
-                    <p><a href={% url "groups:groups" %}>Groups</a></p>
-            </div>
+                    <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'students:students' %}'">Students</button>
+                    <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'groups:groups' %}'">Groups</button>
                 {% else %}
                     <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>
                 {% endif %}
+                    </div>
             <div class="label-mine">
-                <p class="text-info"><strong>Have a nice day</strong></p>
+                <p class="text-info"><strong>Have a nice day :)</strong></p>
             </div>
         </div>
         <div class="col-md-2"></div>
