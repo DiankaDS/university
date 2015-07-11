@@ -15,7 +15,7 @@
     </tr>
     {% for group in object_list %}
         <tr>
-            <td>{{ group.group_name }}</td>
+            <td><a href="{% url 'groups:info' group.id %}">{{ group.group_name }}</a></td>
             <td>{{ group.student_set.count }}</td>
             <td>{{ group.elder }}</td>
         </tr>
