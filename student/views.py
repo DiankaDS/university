@@ -1,5 +1,6 @@
 from django.core.urlresolvers import reverse
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, \
+    DeleteView
 from student.models import Student
 
 
@@ -24,6 +25,13 @@ class StudentCreateView(CreateView):
 class StudentUpdateView(UpdateView):
     model = Student
     template_name = "update_student.html"
+
+    def get_success_url(self):
+        return reverse("students:students")
+
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = "delete_student.html"
 
     def get_success_url(self):
         return reverse("students:students")

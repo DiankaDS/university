@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.decorators import login_required
 from student.views import StudentsListView, StudentsInfoView, StudentCreateView, \
-    StudentUpdateView
+    StudentUpdateView, StudentDeleteView
 
 urlpatterns = patterns(
     '',
@@ -12,4 +12,6 @@ urlpatterns = patterns(
         name="create"),
     url(r'^(?P<pk>\d+)/update/$', login_required(StudentUpdateView.as_view()),
         name="update"),
+    url(r'^(?P<pk>\d+)/delete/$', login_required(StudentDeleteView.as_view()),
+        name="delete"),
 )

@@ -19,7 +19,7 @@
                     <td>{{ student.last_name }}</td>
                     <td><button type="button" class="btn btn-info"><a href="{% url 'students:info' student.student_id %}">View</a></button>
                     <button type="button" class="btn btn-warning"><a href="{% url 'students:update' student.student_id %}">Update</a></button>
-                    </td>
+                    <button type="button" class="btn btn-danger"><a href="{% url 'students:delete' student.student_id %}">Delete</a></button></td>
                 </tr>
             {% endfor %}
         </table>
