@@ -21,6 +21,7 @@
                     </div>
                     <h4>Would you like work with:</h4>
                     <p><a href={% url "students:students" %}>Students</a></p>
+                    <p><a href={% url "groups:groups" %}>Groups</a></p>
             </div>
                 {% else %}
                     <p>You are Guest. Please, <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'reg' %}">sign up</a>.</p>

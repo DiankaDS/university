@@ -16,4 +16,5 @@ urlpatterns = [
         name="success_reg"),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^students/', include('student.urls', namespace='students')),
+    url(r'^groups/', include('group.urls', namespace='groups')),
 ]

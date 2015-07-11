@@ -1,0 +1,27 @@
+{% extends "basic.html" %}
+{% block title %}
+    <title>Groups</title>
+{% endblock %}
+{% block body %}
+    <div class="label-mine">
+        <h1>Groups List</h1>
+    </div>
+        {% if object_list %}
+    <table class="table" border = "1">
+    <tr>
+        <th>Group</th>
+        <th>Students</th>
+        <th>Elder</th>
+    </tr>
+    {% for group in object_list %}
+        <tr>
+            <td>{{ group.group_name }}</td>
+            <td>{{ group.student_set.count }}</td>
+            <td>{{ group.elder }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No groups are available.</p>
+{% endif %}
+{% endblock %}
