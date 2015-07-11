@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.core.urlresolvers import reverse
+from django.views.generic import ListView, DetailView, CreateView
 from student.models import Student
 
 
@@ -11,3 +11,11 @@ class StudentsListView(ListView):
 class StudentsInfoView(DetailView):
     model = Student
     template_name = "students_info.html"
+
+
+class StudentCreateView(CreateView):
+    model = Student
+    template_name = "create_student.html"
+
+    def get_success_url(self):
+        return reverse("students:students")
