@@ -1,10 +1,10 @@
 {% extends "basic.html" %}
 {% block title %}
-    <title>Update group</title>
+    <title>Update student</title>
 {% endblock %}
 {% block body %}
     <div class="label-mine">
-        <h1>Update group {{ group.group_name }}</h1>
+        <h1>Update student {{ student.last_name }}</h1>
     </div>
     <form action="" method="post">{% csrf_token %}
         {{ form.as_p }}

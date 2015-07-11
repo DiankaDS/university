@@ -12,6 +12,7 @@
             <th>Student's last name</th>
             <th>Student's first name</th>
             <th>Student's middle name</th>
+            <th></th>
         </tr>
         {% for student in group.student_set.all %}
             <tr>
@@ -19,6 +20,7 @@
                 <td>{{ student.last_name }}</td>
                 <td>{{ student.first_name }}</td>
                 <td>{{ student.middle_name }}</td>
+             <td><button type="button" class="btn btn-info"><a href="{% url 'students:info' student.id %}">View</a></button></td>
             </tr>
         {% endfor %}
     </table>

@@ -6,16 +6,27 @@
     <div class="label-mine">
         <h1>Students List</h1>
     </div>
-    <div class="text-center">
-        {% if object_list %}
-            <ul>
-                {% for student in object_list %}
-                    <li><a href="{% url 'students:info' student.student_id %}">{{ student.last_name }}</a></li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No students are available.</p>
-        {% endif %}
-    </div>
+    {% if object_list %}
+        <table class="table" border = "1">
+            <tr>
+                <th>Student's id</th>
+                <th>Student's last name</th>
+                <th>Operations</th>
+            </tr>
+            {% for student in object_list %}
+                <tr>
+                    <td>{{ student.student_id }}</td>
+                    <td>{{ student.last_name }}</td>
+                    <td><button type="button" class="btn btn-info"><a href="{% url 'students:info' student.student_id %}">View</a></button>
+                    <button type="button" class="btn btn-warning"><a href="{% url 'students:update' student.student_id %}">Update</a></button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No students are available.</p>
+    {% endif %}
     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{% url 'students:create' %}">Add new student</a></button>
 {% endblock %}
+
+
