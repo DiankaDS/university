@@ -1,0 +1,16 @@
+{% extends "basic.html" %}
+{% block title %}
+    <title>Delete group</title>
+{% endblock %}
+{% block body %}
+    <div class="label-mine">
+        <h1>Delete group {{ group.group_name }}</h1>
+    </div>
+    <div class="text-center">
+        <form action="" method="post">{% csrf_token %}
+            <p>Are you sure you want to delete {{ object }}?</p>
+            <button type="submit" class="btn btn-danger">Yes, delete it</button>
+            <button type="reset" class="btn btn-default"><a href="{% url 'groups:groups' %}">No, don't delete it</a></button>
+        </form>
+    </div>
+{% endblock %}

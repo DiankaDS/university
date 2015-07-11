@@ -1,5 +1,5 @@
 from django.core.urlresolvers import reverse
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from group.models import Group
 
 
@@ -16,6 +16,14 @@ class GroupsInfoView(DetailView):
 class GroupUpdateView(UpdateView):
     model = Group
     template_name = "update_group.html"
+
+    def get_success_url(self):
+        return reverse("groups:groups")
+
+
+class GroupDeleteView(DeleteView):
+    model = Group
+    template_name = "delete_group.html"
 
     def get_success_url(self):
         return reverse("groups:groups")
