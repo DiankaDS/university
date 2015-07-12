@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView, RedirectView
-from core.views import UserRegistrationView
+from core.views import UserRegistrationView, UserProfileView
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="home_page.html"),
@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^students/', include('student.urls', namespace='students')),
     url(r'^groups/', include('group.urls', namespace='groups')),
+    url(r'user_profile/$', UserProfileView.as_view(), name='user_profile'),
 ]

@@ -1,5 +1,6 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from core.forms import RegistrationForm
 
 
@@ -9,3 +10,8 @@ class UserRegistrationView(CreateView):
 
     def get_success_url(self):
         return reverse("success_reg")
+
+
+class UserProfileView(ListView):
+    model = User
+    template_name = "user_profile.html"

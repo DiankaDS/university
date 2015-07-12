@@ -16,7 +16,7 @@
             </div>
                 {% if request.user.username %}
                     <div class="text-right">
-                    <p class="text-muted">You are {{ request.user.username }} <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
+                    <p class="text-muted">You are <a href="{% url 'user_profile' %}">{{ request.user.username }}</a> <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
                     </div>
                     <div class="basic-mine">
                     <h4>Would you like work with:</h4>
