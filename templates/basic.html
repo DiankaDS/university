@@ -10,7 +10,21 @@
 </head>
 <body>
      <div class="container">
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <div class="core-mine">
+                <h4><a href='{% url 'user_profile' %}'>Profile</a></h4>
+                <h4>Students</h4>
+                <ul>
+                    <li><a href='{% url 'students:students' %}'>Students List</a></li>
+                    <li><a href='{% url 'students:create' %}'>Create Student</a></li>
+                </ul>
+                <h4>Groups</h4>
+                <ul>
+                    <li><a href='{% url 'groups:groups' %}'>Groups List</a></li>
+                    <li><a href='{% url 'groups:create' %}'>Create Group</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="col-md-8">
              <div class="text-right">
                 <p class="text-muted">{{ request.user.username }} <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>
