@@ -1,11 +1,12 @@
 from django.conf.urls import url
 from django.contrib.auth.decorators import login_required
-from api.views import StudentsListAPIView
+from api.views import StudentListAPIView, GroupListAPIView
 
 urlpatterns = [
-    url(r'^students/$', login_required(StudentsListAPIView.as_view()),
+    url(r'^students/$', login_required(StudentListAPIView.as_view()),
         name="students"),
-    # url(r'^groups/$', GroupsListAPIView.as_view(), name="groups"),
+    url(r'^groups/$', login_required(GroupListAPIView.as_view()),
+        name="groups"),
     # url(r'^create_student/$', StudentCreateAPIView.as_view(),
     #     name="create_student"),
     # url(r'^create_group/$', GroupCreateAPIView.as_view(), name="create_group"),

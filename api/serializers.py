@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from student.models import Student
+from group.models import Group
 
-class StudentsSerializer(serializers.ModelSerializer):
+class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = (
@@ -11,4 +12,13 @@ class StudentsSerializer(serializers.ModelSerializer):
             'year_of_birth',
             'student_id',
             'group'
+        )
+
+
+class GroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group
+        fields = (
+            'group_name',
+            'elder',
         )

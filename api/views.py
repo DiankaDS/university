@@ -1,9 +1,14 @@
-from api.serializers import StudentsSerializer
+from api.serializers import StudentSerializer, GroupSerializer
 from student.models import Student
+from group.models import Group
 from rest_framework.generics import ListAPIView
 
 
-class StudentsListAPIView(ListAPIView):
+class StudentListAPIView(ListAPIView):
     queryset = Student.objects.all()
-    serializer_class = StudentsSerializer
+    serializer_class = StudentSerializer
 
+
+class GroupListAPIView(ListAPIView):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
