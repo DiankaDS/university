@@ -8,6 +8,7 @@
     </div>
     <div class="basic-mine">
         <p>{{ request.user.username }}</p>
+        <img src={{ request.user.profile_image }} height="100" width="100">
         <p>First name: {{ request.user.first_name }}</p>
         <p>Last name: {{ request.user.last_name }}</p>
         <p>Email: {{ request.user.email }}</p>

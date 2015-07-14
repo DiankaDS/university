@@ -11,6 +11,7 @@ class RegistrationForm(forms.ModelForm):
         model = get_user_model()
         fields = (
             'username',
+            'profile_image',
             'first_name',
             'last_name',
             'email',
