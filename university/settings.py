@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'student',
     'group',
     'core',
+    'api',
 )
 
 MIDDLEWARE_CLASSES = (
