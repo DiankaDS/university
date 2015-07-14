@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.views.generic import CreateView, ListView
 from core.forms import RegistrationForm
+from core.models import UserProfile
 
 
 class UserRegistrationView(CreateView):
@@ -13,5 +14,5 @@ class UserRegistrationView(CreateView):
 
 
 class UserProfileView(ListView):
-    model = User
+    model = UserProfile
     template_name = "user_profile.html"

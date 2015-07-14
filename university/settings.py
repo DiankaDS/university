@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'student',
     'group',
+    'core',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,3 +120,5 @@ STATIC_ROOT = 'static/bootstrap'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+AUTH_USER_MODEL = "core.UserProfile"
