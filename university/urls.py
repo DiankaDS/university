@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^students/', include('student.urls', namespace='students')),
     url(r'^groups/', include('group.urls', namespace='groups')),
     url(r'user_profile/$', UserProfileView.as_view(), name='user_profile'),
+    url(r'api/v1/', include('api.urls', namespace='api')),
 ]
