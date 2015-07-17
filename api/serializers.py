@@ -30,10 +30,20 @@ class ElderSerializer(serializers.ModelSerializer):
 
 class GroupSerializer(serializers.ModelSerializer):
     elder = ElderSerializer()
+    number_of_students = serializers.SerializerMethodField()
+    students = serializers.SerializerMethodField()
 
     class Meta:
         model = Group
         fields = (
             'group_name',
             'elder',
+            'number_of_students',
+            'students'
         )
+
+    def get_number_of_students(self, obj):
+        return obj.student_set.count()
+
+    def get_students(self, obj):
+        return StudentSerializer(obj.student_set.all(), many=True).data
