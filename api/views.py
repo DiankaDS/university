@@ -1,4 +1,5 @@
-from api.serializers import StudentSerializer, GroupSerializer
+from api.serializers import StudentSerializer, GroupSerializer, \
+    CreateGroupSerializer
 from student.models import Student
 from group.models import Group
 from rest_framework.generics import ListAPIView, CreateAPIView
@@ -29,3 +30,16 @@ class StudentCreateAPIView(CreateAPIView):
     </pre>
     """
     serializer_class = StudentSerializer
+
+
+class GroupCreateAPIView(CreateAPIView):
+    """
+    <b><p> Test DATA </p></b>
+    <pre>
+        {
+        "group_name": "Main"
+            "elder": 1
+        }
+    </pre>
+    """
+    serializer_class = CreateGroupSerializer

@@ -47,3 +47,13 @@ class GroupSerializer(serializers.ModelSerializer):
 
     def get_students(self, obj):
         return StudentSerializer(obj.student_set.all(), many=True).data
+
+
+class CreateGroupSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Group
+        fields = (
+            'group_name',
+            'elder',
+        )
