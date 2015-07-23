@@ -9,11 +9,19 @@
     <div class="form-mine">
     <form method="post">{% csrf_token %}
         {% for field in form %}
+            {% if field.errors %}
+                <div class="form-group has-error">
+                    <p>{{ field.name }}:
+                    {{ field }}</p>
+                    <div class="help-block with-errors">{{ field.errors }}</div>
+                </div>
+            {% else %}
             <div class="form-group">
                 <p>{{ field.name }}:
                     {{ field }}</p>
                 <div class="help-block with-errors">{{ field.errors }}</div>
             </div>
+            {% endif %}
         {% endfor %}
         <button type="submit" class="btn btn-success">Create</button>
     </form>
