@@ -3,17 +3,44 @@
     <title>Profile</title>
 {% endblock %}
 {% block body %}
-    <div class="label-mine">
-        <h1>Profile on University</h1>
+    <div class="container">
+        <div class="label-mine">
+            <h1>Profile on University</h1>
+        </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <p><img src={{ request.user.profile_image }} height="100" width="100">{{ request.user.username }}</p>
+        <table class="table table-bordered">
+            <tr class="active">
+                <td>First name:</td>
+                <td>{{ request.user.first_name }}</td>
+            </tr>
+            <tr class="active">
+                <td>Last name:</td>
+                <td>{{ request.user.last_name }}</td>
+            </tr>
+            <tr class="active">
+                <td>Email:</td>
+                <td>{{ request.user.email }}</td>
+            </tr>
+            <tr class="active">
+                <td>Address:</td>
+                <td>{{ request.user.address }}</td>
+            </tr>
+            <tr class="active">
+                <td>Mobile phone:</td>
+                <td>{{ request.user.mobile_phone }}</td>
+            </tr>
+        </table>
+
+{#        <p>{{ request.user.username }}</p>#}
+{#        <img src={{ request.user.profile_image }} height="100" width="100">#}
+{#        <p>First name: {{ request.user.first_name }}</p>#}
+{#        <p>Last name: {{ request.user.last_name }}</p>#}
+{#        <p>Email: {{ request.user.email }}</p>#}
+{#        <p>Address: {{ request.user.address }}</p>#}
+{#        <p>Mobile phone: {{ request.user.mobile_phone }}</p>#}
     </div>
-    <div class="basic-mine">
-        <p>{{ request.user.username }}</p>
-        <img src={{ request.user.profile_image }} height="100" width="100">
-        <p>First name: {{ request.user.first_name }}</p>
-        <p>Last name: {{ request.user.last_name }}</p>
-        <p>Email: {{ request.user.email }}</p>
-        <p>Address: {{ request.user.address }}</p>
-        <p>Mobile phone: {{ request.user.mobile_phone }}</p>
     </div>
 {% endblock %}
 

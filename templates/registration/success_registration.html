@@ -8,20 +8,36 @@
     <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
+<div class="body">
     <div class="container">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="bs-component">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="{% url 'home_page' %}">University</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                              <li><a href="{% url 'login' %}">Sign in</a></li>
+                              <li><a href="{% url 'reg' %}">Sign up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+        </div>
+        <div class="basic-mine">
             <div class="label-mine">
                 <h1>REGISTRATION COMPLETE</h1>
-            </div>
-            <div class="text-center">
-                <ins><a href="{% url "home_page" %}">Home page</a></ins>
-            </div>
-           <div class="label-mine">
-                <p class="text-info"><strong>Have a nice day</strong></p>
+                <h1><a href="{% url 'login' %}">Sign in</a></h1>
             </div>
         </div>
-        <div class="col-md-2"></div>
-    </div>
+        <div class="bs-component">
+            <nav class="navbar navbar-default">
+                <a class="navbar-footer" href="#">reference 1</a>
+                <a class="navbar-footer" href="#">reference 2</a>
+            </nav>
+        </div>
+</div>
+</div>
 </body>
 </html>

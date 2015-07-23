@@ -1,31 +1,101 @@
 .label-mine{
-    color: crimson;
     text-align: center;
-    background: lightblue;
+    min-height:100%;
+    position: relative;
+    margin-bottom: 5%;
+}
+
+.navbar-footer{
+    margin: 7.5px;
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
     height: 50px;
+    color: #c8c8c8;
+}
+.body{
+    padding-bottom: 10%;
+    background-color: gainsboro;
+}
+
+
+.navbar-default {
+  background-color: #3a3f44;
+  border-color: #2b2e32;
+}
+.navbar-brand{
+    margin: 7.5px;
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+}
+.navbar-nav {
+  margin: 7.5px -15px;
+}
+.navbar-default .navbar-brand {
+  color: #c8c8c8;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #c8c8c8;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #272b2e;
+}
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+
+.btn-default{
+    background-color: #3a3f44;
+    color: #c8c8c8;
 }
 
 .form-mine{
-    margin-left: 30%;
-    margin-right: 25%;
+    margin-left: 38%;
+    margin-right: 38%;
     margin-bottom: 10%;
     margin-top: 10%;
     text-align: center;
 }
 
 .basic-mine{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    /*text-align: center;*/
+}
+.home-mine{
     margin-bottom: 10%;
     margin-top: 10%;
     text-align: center;
-    height: 300px;
 }
 
-.core-mine{
-    margin-bottom: 20%;
-    margin-top:100px;
-    margin-left: -20%;
-    margin-right: -19%;
+/*.core-mine{*/
+    /*margin-bottom: 20%;*/
+    /*margin-top:100px;*/
+    /*margin-left: -20%;*/
+    /*margin-right: -19%;*/
+    /*text-align: center;*/
+    /*background: lightblue;*/
+    /*height: 200px;*/
+/*}*/
+
+.message{
+    background-color: #ffdbe3;
+    /*height: 150px;*/
     text-align: center;
-    background: lightblue;
-    height: 200px;
+    line-height: 120px;
 }

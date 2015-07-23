@@ -3,26 +3,27 @@
     <title>Groups</title>
 {% endblock %}
 {% block body %}
+    <div class="container">
     <div class="label-mine">
         <h1>Groups List</h1>
     </div>
-    <div class="basic-mine">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
         {% if object_list %}
-            <table class="table" border = "1">
-            <tr>
+            <table class="table table-bordered">
+            <tr class="warning">
                 <th>Group</th>
                 <th>Students</th>
                 <th>Elder</th>
-                <th>Operations</th>
             </tr>
             {% for group in object_list %}
-                <tr>
-                    <td>{{ group.group_name }}</td>
+                <tr class="active">
+                    <td><a href='{% url 'groups:info' group.id %}'>{{ group.group_name }}</a></td>
                     <td>{{ group.student_set.count }}</td>
                     <td>{{ group.elder }}</td>
-                    <td><button type="button" class="btn btn-info" onclick="location.href='{% url 'groups:info' group.id %}'">View</button>
-                    <button type="button" class="btn btn-warning" onclick="location.href='{% url 'groups:update' group.id %}'">Update</button>
-                    <button type="button" class="btn btn-danger" onclick="location.href='{% url 'groups:delete' group.id %}'">Delete</button></td>
+{#                    <td><button type="button" class="btn btn-info" onclick="location.href='{% url 'groups:info' group.id %}'">View</button>#}
+{#                    <button type="button" class="btn btn-warning" onclick="location.href='{% url 'groups:update' group.id %}'">Update</button>#}
+{#                    <button type="button" class="btn btn-danger" onclick="location.href='{% url 'groups:delete' group.id %}'">Delete</button></td>#}
                 </tr>
             {% endfor %}
             </table>
@@ -30,5 +31,7 @@
         {% else %}
             <p>No groups are available.</p>
         {% endif %}
+    </div>
+    <div class="col-md-3"></div>
     </div>
 {% endblock %}
