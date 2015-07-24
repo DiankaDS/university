@@ -8,22 +8,90 @@
     </div>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
-        {% for field in form %}
-            {% if field.errors %}
-                <div class="form-group has-error">
-                    <p>{{ field.name }}:
-                    {{ field }}</p>
-                    <div class="help-block with-errors">{{ field.errors }}</div>
-                </div>
-            {% else %}
-            <div class="form-group">
-                <p>{{ field.name }}:
-                    {{ field }}</p>
-                <div class="help-block with-errors">{{ field.errors }}</div>
+{#        {% for field in form %}#}
+{#            {% if field.errors %}#}
+{#                <div class="form-group has-error">#}
+{#                    <p>{{ field.name }}:#}
+{#                    {{ field }}</p>#}
+{#                    <div class="help-block with-errors">{{ field.errors }}</div>#}
+{#                </div>#}
+{#            {% else %}#}
+{#            <div class="form-group">#}
+{#                <p>{{ field.name }}:#}
+{#                    {{ field }}</p>#}
+{#                <div class="help-block with-errors">{{ field.errors }}</div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#        {% endfor %}#}
+        {% if form.first_name.errors %}
+            <div class="form-group has-error">
+                <label for="first_name" class="control-label">First name</label>
+                <input class="form-control" placeholder="Jonny" for={{ form.first_name }}
+                <div class="help-block with-errors">{{ form.first_name.errors }}</div>
             </div>
-            {% endif %}
-        {% endfor %}
-        <button type="submit" class="btn btn-success">Create</button>
+        {% else %}
+            <div class="form-group">
+                <label for="first_name" class="control-label">First name</label>
+                <input class="form-control" placeholder="Jonny" for={{ form.first_name }}
+            </div>
+        {% endif %}
+        {% if form.last_name.errors %}
+            <div class="form-group has-error">
+                <label for="last_name" class="control-label">Last name</label>
+                <input class="form-control" placeholder="Smith" for={{ form.last_name }}
+                <div class="help-block with-errors">{{ form.last_name.errors }}</div>
+            </div>
+        {% else %}
+            <div class="form-group">
+                <label for="last_name" class="control-label">Last name</label>
+                <input class="form-control" placeholder="Smith" for={{ form.last_name }}
+            </div>
+        {% endif %}
+        {% if form.middle_name.errors %}
+            <div class="form-group has-error">
+                <label for="middle_name" class="control-label">Middle name</label>
+                <input class="form-control" placeholder="Marvollo" for={{ form.middle_name }}
+                <div class="help-block with-errors">{{ form.middle_name.errors }}</div>
+            </div>
+        {% else %}
+            <div class="form-group">
+                <label for="middle_name" class="control-label">Last name</label>
+                <input class="form-control" placeholder="Marvollo" for={{ form.middle_name }}
+            </div>
+        {% endif %}
+        {% if form.year_of_birth.errors %}
+            <div class="form-group has-error">
+                <label for="year_of_birth" class="control-label">Year of birth</label>
+                <input class="form-control" placeholder="1995" for={{ form.year_of_birth }}
+                <div class="help-block with-errors">{{ form.year_of_birth.errors }}</div>
+            </div>
+        {% else %}
+            <div class="form-group">
+                <label for="year_of_birth" class="control-label">Year of birth</label>
+                <input class="form-control" placeholder="1995" for={{ form.year_of_birth }}
+            </div>
+        {% endif %}
+        {% if form.student_id.errors %}
+            <div class="form-group has-error">
+                <label for="student_id" class="control-label">Student's id</label>
+                <input class="form-control" placeholder="000325" for={{ form.student_id }}
+                <div class="help-block with-errors">{{ form.student_id.errors }}</div>
+            </div>
+        {% else %}
+            <div class="form-group">
+                <label for="student_id" class="control-label">Student's id</label>
+                <input class="form-control" placeholder="000325" for={{ form.student_id }}
+            </div>
+        {% endif %}
+
+            <div class="form-group has-error">
+                <p>Group:{{ form.group }}</p>
+                <div class="help-block with-errors">{{ form.group.errors }}</div>
+            </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
     </form>
     </div>
 {% endblock %}

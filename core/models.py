@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
-    profile_image = models.ImageField(upload_to="/media/", null=True,
+    profile_image = models.ImageField(upload_to="img", null=True,
                                       blank=True)
     address = models.CharField(max_length=50, null=True, blank=True)
     mobile_phone = models.CharField(max_length=13, null=True, blank=True)

@@ -31,28 +31,41 @@
             </div>
             <div class="form-mine">
             <form method="post">{% csrf_token %}
-                    {% for field in form %}
-                        {% if field.errors %}
-                            <div class="form-group has-error">
-                                <input class="form-control" placeholder={{ field.name }} for={{ field }}
-                                <div class="help-block with-errors">{{ field.errors }}</div>
-                            </div>
-                        {% else %}
-                            <div class="form-group ">
-                                <input class="form-control" placeholder={{ field.name }} for={{ field }}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                <button type="submit" class="btn btn-success">Log in</button>
+                {% if form.username.errors %}
+                    <div class="form-group has-error">
+                        <label for="username" class="control-label">Username</label>
+                        <input class="form-control" placeholder="username" for={{ form.username }}
+                        <div class="help-block with-errors">{{ form.username.errors }}</div>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label for="username" class="control-label">Username</label>
+                        <input class="form-control" placeholder="username" for={{ form.username }}
+                    </div>
+                {% endif %}
+                {% if form.password.errors %}
+                    <div class="form-group has-error">
+                        <label for="password" class="control-label">Password</label>
+                        <input class="form-control" placeholder="password" for={{ form.password }}
+                        <div class="help-block with-errors">{{ form.password.errors }}</div>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label for="password" class="control-label">Password</label>
+                        <input class="form-control" placeholder="password" for={{ form.password }}
+                    </div>
+                {% endif %}
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Log in</button>
+                </div>
             </form>
             </div>
     </div>
-    <div class="bs-component">
-        <nav class="navbar navbar-default">
-            <a class="navbar-footer" href="#">reference 1</a>
-            <a class="navbar-footer" href="#">reference 2</a>
-        </nav>
-    </div>
+        <div class="footer-mine">
+            <a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Created by: Diana Agafonova</a>
+            <a class="footer-mine" href="https://github.com/DiankaDS/university">GitHub: university</a>
+        </div>
     </div>
 </div>
 </body>

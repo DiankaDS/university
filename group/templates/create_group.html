@@ -8,22 +8,41 @@
     </div>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
-        {% for field in form %}
-            {% if field.errors %}
-                <div class="form-group has-error">
-                    <p>{{ field.name }}:
-                    {{ field }}</p>
-                    <div class="help-block with-errors">{{ field.errors }}</div>
-                </div>
-            {% else %}
-            <div class="form-group">
-                <p>{{ field.name }}:
-                    {{ field }}</p>
-                <div class="help-block with-errors">{{ field.errors }}</div>
+{#        {% for field in form %}#}
+{#            {% if field.errors %}#}
+{#                <div class="form-group has-error">#}
+{#                    <p>{{ field.name }}:#}
+{#                    {{ field }}</p>#}
+{#                    <div class="help-block with-errors">{{ field.errors }}</div>#}
+{#                </div>#}
+{#            {% else %}#}
+{#            <div class="form-group">#}
+{#                <p>{{ field.name }}:#}
+{#                    {{ field }}</p>#}
+{#                <div class="help-block with-errors">{{ field.errors }}</div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#        {% endfor %}#}
+        {% if form.group_name.errors %}
+            <div class="form-group has-error">
+                <label for="group_name" class="control-label">Group name</label>
+                <input class="form-control" placeholder="PM-14-1" for={{ form.group_name }}
+                <div class="help-block with-errors">{{ form.group_name.errors }}</div>
             </div>
-            {% endif %}
-        {% endfor %}
-        <button type="submit" class="btn btn-success">Create</button>
+        {% else %}
+            <div class="form-group">
+                <label for="group_name" class="control-label">Group name</label>
+                <input class="form-control" placeholder="PM-14-1" for={{ form.group_name }}
+            </div>
+        {% endif %}
+        <div class="form-group has-error">
+            <p>Elder:{{ form.elder }}</p>
+            <div class="help-block with-errors">{{ form.elder.errors }}</div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
     </form>
     </div>
 {% endblock %}

@@ -9,8 +9,12 @@
         </div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <p><img src={{ request.user.profile_image }} height="100" width="100">{{ request.user.username }}</p>
+        <img src={{ request.user.profile_image }} height="100" width="100">
         <table class="table table-bordered">
+            <tr class="active">
+                <td>Username:</td>
+                <td>{{ request.user.username }}</td>
+            </tr>
             <tr class="active">
                 <td>First name:</td>
                 <td>{{ request.user.first_name }}</td>
