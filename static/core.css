@@ -4,7 +4,9 @@
     position: relative;
     margin-bottom: 5%;
 }
-
+.user{
+    color: #716f54;
+}
 .footer-mine{
     margin: 7.5px;
     padding: 15px 15px;
@@ -16,7 +18,7 @@
     text-align: center;
 }
 .body{
-    padding-bottom: 10%;
+    /*padding-bottom: 10%;*/
     background-color: gainsboro;
 }
 
@@ -80,7 +82,7 @@
 }
 .home-mine{
     margin-bottom: 10%;
-    margin-top: 10%;
+    margin-top: 8%;
     text-align: center;
 }
 

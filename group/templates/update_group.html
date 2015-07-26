@@ -8,23 +8,16 @@
     </div>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
-{#        {% for field in form %}#}
-{#            <div class="form-group">#}
-{#                <p>{{ field.name }}:#}
-{#                    {{ field }}</p>#}
-{#                <div class="help-block with-errors">{{ field.errors }}</div>#}
-{#            </div>#}
-{#        {% endfor %}#}
         {% if form.group_name.errors %}
             <div class="form-group has-error">
                 <label for="group_name" class="control-label">Group name</label>
-                <input class="form-control" for={{ form.group_name }}
+                <input class="form-control" value="{{ group.group_name }}" name="group_name">
                 <div class="help-block with-errors">{{ form.group_name.errors }}</div>
             </div>
         {% else %}
             <div class="form-group">
                 <label for="group_name" class="control-label">Group name</label>
-                <input class="form-control" for={{ form.group_name }}
+                <input class="form-control" value="{{ group.group_name }}" name="group_name">
             </div>
         {% endif %}
         <div class="form-group has-error">

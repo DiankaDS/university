@@ -6,6 +6,7 @@
     <title>Sign in</title>
     <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
     <link rel="stylesheet" href={% static "core.css" %}>
+    <script src={% static "bootstrap/bootstrap.min.js" %}></script>
 </head>
 <body>
 <div class="body">
@@ -34,25 +35,25 @@
                 {% if form.username.errors %}
                     <div class="form-group has-error">
                         <label for="username" class="control-label">Username</label>
-                        <input class="form-control" placeholder="username" for={{ form.username }}
+                        <input class="form-control" placeholder="username" name="username">
                         <div class="help-block with-errors">{{ form.username.errors }}</div>
                     </div>
                 {% else %}
                     <div class="form-group">
                         <label for="username" class="control-label">Username</label>
-                        <input class="form-control" placeholder="username" for={{ form.username }}
+                        <input class="form-control" placeholder="username" name="username" {% if form.username.value %} value="{{ form.username.value }}" {% endif %}>
                     </div>
                 {% endif %}
                 {% if form.password.errors %}
                     <div class="form-group has-error">
                         <label for="password" class="control-label">Password</label>
-                        <input class="form-control" placeholder="password" for={{ form.password }}
+                        <input class="form-control" placeholder="password" type="password" name="password">
                         <div class="help-block with-errors">{{ form.password.errors }}</div>
                     </div>
                 {% else %}
                     <div class="form-group">
                         <label for="password" class="control-label">Password</label>
-                        <input class="form-control" placeholder="password" for={{ form.password }}
+                        <input class="form-control" placeholder="password" type="password" name="password">
                     </div>
                 {% endif %}
 

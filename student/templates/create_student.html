@@ -8,79 +8,64 @@
     </div>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
-{#        {% for field in form %}#}
-{#            {% if field.errors %}#}
-{#                <div class="form-group has-error">#}
-{#                    <p>{{ field.name }}:#}
-{#                    {{ field }}</p>#}
-{#                    <div class="help-block with-errors">{{ field.errors }}</div>#}
-{#                </div>#}
-{#            {% else %}#}
-{#            <div class="form-group">#}
-{#                <p>{{ field.name }}:#}
-{#                    {{ field }}</p>#}
-{#                <div class="help-block with-errors">{{ field.errors }}</div>#}
-{#            </div>#}
-{#            {% endif %}#}
-{#        {% endfor %}#}
         {% if form.first_name.errors %}
             <div class="form-group has-error">
                 <label for="first_name" class="control-label">First name</label>
-                <input class="form-control" placeholder="Jonny" for={{ form.first_name }}
+                <input class="form-control" placeholder="first name" name="first_name" {% if form.first_name.value %} value="{{ form.first_name.value }}" {% endif %}>
                 <div class="help-block with-errors">{{ form.first_name.errors }}</div>
             </div>
         {% else %}
             <div class="form-group">
                 <label for="first_name" class="control-label">First name</label>
-                <input class="form-control" placeholder="Jonny" for={{ form.first_name }}
+                <input class="form-control" placeholder="first name" name="first_name" {% if form.first_name.value %} value="{{ form.first_name.value }}" {% endif %}>
             </div>
         {% endif %}
         {% if form.last_name.errors %}
             <div class="form-group has-error">
                 <label for="last_name" class="control-label">Last name</label>
-                <input class="form-control" placeholder="Smith" for={{ form.last_name }}
+                <input class="form-control" placeholder="last name" name="last_name" {% if form.last_name.value %} value="{{ form.last_name.value }}" {% endif %}>
                 <div class="help-block with-errors">{{ form.last_name.errors }}</div>
             </div>
         {% else %}
             <div class="form-group">
                 <label for="last_name" class="control-label">Last name</label>
-                <input class="form-control" placeholder="Smith" for={{ form.last_name }}
+                <input class="form-control" placeholder="last name" name="last_name" {% if form.last_name.value %} value="{{ form.last_name.value }}" {% endif %}>
             </div>
         {% endif %}
         {% if form.middle_name.errors %}
             <div class="form-group has-error">
                 <label for="middle_name" class="control-label">Middle name</label>
-                <input class="form-control" placeholder="Marvollo" for={{ form.middle_name }}
+                <input class="form-control" placeholder="middle name" name="middle_name" {% if form.middle_name.value %} value="{{ form.middle_name.value }}" {% endif %}>
                 <div class="help-block with-errors">{{ form.middle_name.errors }}</div>
             </div>
         {% else %}
             <div class="form-group">
                 <label for="middle_name" class="control-label">Last name</label>
-                <input class="form-control" placeholder="Marvollo" for={{ form.middle_name }}
+                <input class="form-control" placeholder="middle name" name="middle_name" {% if form.middle_name.value %} value="{{ form.middle_name.value }}" {% endif %}>
             </div>
         {% endif %}
         {% if form.year_of_birth.errors %}
             <div class="form-group has-error">
                 <label for="year_of_birth" class="control-label">Year of birth</label>
-                <input class="form-control" placeholder="1995" for={{ form.year_of_birth }}
+                <input class="form-control" placeholder="year of birth" name="year_of_birth" {% if form.year_of_birth.value %} value="{{ form.year_of_birth.value }}" {% endif %}>
                 <div class="help-block with-errors">{{ form.year_of_birth.errors }}</div>
             </div>
         {% else %}
             <div class="form-group">
                 <label for="year_of_birth" class="control-label">Year of birth</label>
-                <input class="form-control" placeholder="1995" for={{ form.year_of_birth }}
+                <input class="form-control" placeholder="year of birth" name="year_of_birth" {% if form.year_of_birth.value %} value="{{ form.year_of_birth.value }}" {% endif %}>
             </div>
         {% endif %}
         {% if form.student_id.errors %}
             <div class="form-group has-error">
                 <label for="student_id" class="control-label">Student's id</label>
-                <input class="form-control" placeholder="000325" for={{ form.student_id }}
+                <input class="form-control" placeholder="student's id" name="student_id" {% if form.student_id.value %} value="{{ form.student_id.value }}" {% endif %}>
                 <div class="help-block with-errors">{{ form.student_id.errors }}</div>
             </div>
         {% else %}
             <div class="form-group">
                 <label for="student_id" class="control-label">Student's id</label>
-                <input class="form-control" placeholder="000325" for={{ form.student_id }}
+                <input class="form-control" placeholder="student's id" name="student_id" {% if form.student_id.value %} value="{{ form.student_id.value }}" {% endif %}>
             </div>
         {% endif %}
 

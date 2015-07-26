@@ -8,8 +8,8 @@
     <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
-<div class="body">
-    <div class="container">
+{#<div class="body">#}
+    <div class="container" style="background-color: gainsboro">
         {% if request.user.username %}
         <div class="bs-component">
             <nav class="navbar navbar-default">
@@ -26,6 +26,7 @@
                             <li><a href="{% url 'user_profile' %}">Profile</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <li><span class="user">{{ request.user.username }}</span></li>
                             <li><a href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </div>
@@ -75,10 +76,10 @@
 {#        </div>#}
 
         <div class="footer-mine">
-            <a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Created by: Diana Agafonova</a>
-            <a class="footer-mine" href="https://github.com/DiankaDS/university">GitHub: university</a>
+            <span>Created by:</span><a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Diana Agafonova</a>
+            <span>GitHub:</span><a class="footer-mine" href="https://github.com/DiankaDS/university">university</a>
         </div>
     </div>
-</div>
+{#</div>#}
 </body>
 </html>

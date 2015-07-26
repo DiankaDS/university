@@ -36,78 +36,66 @@
                 {% if form.username.errors %}
                     <div class="form-group has-error">
                         <label for="username" class="control-label">Username</label>
-                        <input class="form-control" placeholder="username" for={{ form.username }}
+                        <input class="form-control" placeholder="username" name="username" {% if form.username.value %} value="{{ form.username.value }}" {% endif %}>
                         <div class="help-block with-errors">{{ form.username.errors }}</div>
                     </div>
                 {% else %}
                     <div class="form-group">
                         <label for="username" class="control-label">Username</label>
-                        <input class="form-control" placeholder="username" for={{ form.username }}
+                        <input class="form-control" placeholder="username" name="username" {% if form.username.value %} value="{{ form.username.value }}" {% endif %}>
                     </div>
                 {% endif %}
 
                 <div class="form-group">
                     <label for="first_name" class="control-label">First name</label>
-                    <input class="form-control" placeholder="first name" for={{ form.first_name }}
+                    <input class="form-control" placeholder="first name" name="first_name" {% if form.first_name.value %} value="{{ form.first_name.value }}" {% endif %}>
                 </div>
                 <div class="form-group">
                     <label for="last_name" class="control-label">Last name</label>
-                    <input class="form-control" placeholder="last name" for={{ form.last_name }}
+                    <input class="form-control" placeholder="last name" name="last_name" {% if form.last_name.value %} value="{{ form.last_name.value }}" {% endif %}>
                 </div>
                 <div class="form-group">
                     <label for="email" class="control-label">Email</label>
-                    <input type="email" class="form-control" placeholder="email" for={{ form.email }}
+                    <input type="email" class="form-control" placeholder="email" name="email" {% if form.email.value %} value="{{ form.email.value }}" {% endif %}>
                 </div>
                 <div class="form-group">
                     <label for="address" class="control-label">Address</label>
-                    <input class="form-control" placeholder="address" for={{ form.address }}
+                    <input class="form-control" placeholder="address" name="address" {% if form.address.value %} value="{{ form.address.value }}" {% endif %}>
                 </div>
                 <div class="form-group">
                     <label for="mobile_phone" class="control-label">Mobile phone</label>
-                    <input class="form-control" placeholder="mobile phone" for={{ form.mobile_phone }}
+                    <input class="form-control" placeholder="mobile phone" name="mobile_phone" {% if form.mobile_phone.value %} value="{{ form.mobile_phone.value }}" {% endif %}>
                 </div>
 
                 {% if form.password.errors %}
                     <div class="form-group has-error">
                         <label for="password" class="control-label">Password</label>
-                        <input class="form-control" placeholder="password" for={{ form.password }}
+                        <input class="form-control" placeholder="password" type="password" name="password">
                         <div class="help-block with-errors">{{ form.password.errors }}</div>
                     </div>
                 {% else %}
                     <div class="form-group">
                         <label for="password" class="control-label">Password</label>
-                        <input class="form-control" placeholder="password" for={{ form.password }}
+                        <input class="form-control" placeholder="password" type="password" name="password">
                     </div>
                 {% endif %}
                 {% if form.repeat_password.errors %}
                     <div class="form-group has-error">
                         <label for="repeat_password" class="control-label">Repeat password</label>
-                        <input class="form-control" placeholder="password" for={{ form.repeat_password }}
+                        <input class="form-control" placeholder="repeat password" type="password" name="repeat_password">
                         <div class="help-block with-errors">{{ form.repeat_password.errors }}</div>
                     </div>
                 {% else %}
                     <div class="form-group">
                         <label for="repeat_password" class="control-label">Repeat password</label>
-                        <input class="form-control" placeholder="repeat password" for={{ form.repeat_password }}
+                        <input class="form-control" placeholder="repeat password" type="password" name="repeat_password">
                     </div>
                 {% endif %}
                 <div class="form-group">
                     <label for="profile_image">Photo</label>
-                    <input type="file" for={{ form.profile_image }}
+                    <input type="file" name="profile_image" {% if form.profile_image.value %} value="{{ form.profile_image.value }}" {% endif %}>
                 </div>
 
-{#            {% for field in form %}#}
-{#                {% if field.errors %}#}
-{#                    <div class="form-group has-error">#}
-{#                        <input class="form-control" placeholder={{ field.name }} for={{ field }}#}
-{#                        <div class="help-block with-errors">{{ field.errors }}</div>#}
-{#                    </div>#}
-{#                {% else %}#}
-{#                    <div class="form-group">#}
-{#                        <input class="form-control" placeholder={{ field.name }} for={{ field }}#}
-{#                    </div>#}
-{#                {% endif %}#}
-{#            {% endfor %}#}
                 <div class="text-center">
                     <button type="submit" class="btn btn-success">Save me</button>
                 </div>

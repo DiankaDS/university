@@ -9,8 +9,13 @@
         </div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <img src={{ request.user.profile_image }} height="100" width="100">
         <table class="table table-bordered">
+            {% if request.user.profile_image %}
+                <tr class="active">
+                    <td>Photo:</td>
+                    <td><img src="{{ request.user.profile_image.url }}" style="height: 150px; width: 150px"></td>
+                </tr>
+            {% endif %}
             <tr class="active">
                 <td>Username:</td>
                 <td>{{ request.user.username }}</td>
