@@ -6,11 +6,10 @@
     <title>Sign up</title>
     <link rel="stylesheet" href={% static "bootstrap/bootstrap.min.css" %}>
     <link rel="stylesheet" href={% static "core.css" %}>
-    <script src="bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="body">
-    <div class="container">
+<div class="container">
+    <div class="body">
         <div class="bs-component">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -26,12 +25,8 @@
                     </div>
                 </nav>
         </div>
-    <div class="basic-mine">
-            <div class="label-mine">
-                <h1>Registration</h1>
-            </div>
+        <h1 class="label-mine">Registration</h1>
             <div class="form-mine">
-
             <form method="post" role="form">{% csrf_token %}
                 {% if form.username.errors %}
                     <div class="form-group has-error">
@@ -66,7 +61,6 @@
                     <label for="mobile_phone" class="control-label">Mobile phone</label>
                     <input class="form-control" placeholder="mobile phone" name="mobile_phone" {% if form.mobile_phone.value %} value="{{ form.mobile_phone.value }}" {% endif %}>
                 </div>
-
                 {% if form.password.errors %}
                     <div class="form-group has-error">
                         <label for="password" class="control-label">Password</label>
@@ -95,18 +89,22 @@
                     <label for="profile_image">Photo</label>
                     <input type="file" name="profile_image" {% if form.profile_image.value %} value="{{ form.profile_image.value }}" {% endif %}>
                 </div>
-
                 <div class="text-center">
-                    <button type="submit" class="btn btn-success">Save me</button>
+                    <button type="submit" class="btn btn-success" style="margin-bottom: 50px">Save me</button>
                 </div>
             </form>
             </div>
     </div>
         <div class="footer-mine">
-            <a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Created by: Diana Agafonova</a>
-            <a class="footer-mine" href="https://github.com/DiankaDS/university">GitHub: university</a>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <span>Created by:</span><a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Diana Agafonova</a>
+            </div>
+            <div class="col-md-4">
+                <span>GitHub:</span><a class="footer-mine" href="https://github.com/DiankaDS/university">university</a>
+            </div>
+            <div class="col-md-2"></div>
         </div>
-    </div>
 </div>
 </body>
 </html>

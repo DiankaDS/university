@@ -8,9 +8,9 @@
     <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
-{#<div class="body">#}
-    <div class="container" style="background-color: gainsboro">
-        {% if request.user.username %}
+<div class="container">
+<div class="body">
+    {% if request.user.username %}
         <div class="bs-component">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -23,32 +23,22 @@
                             <li><a href="{% url 'groups:groups' %}">Groups</a></li>
                             <li><a href="{% url 'students:create' %}">Create Student</a></li>
                             <li><a href="{% url 'groups:create' %}">Create Group</a></li>
-                            <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                            <li><a href="{% url 'user_profile' %}">Profile ({{ request.user.username }})</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><span class="user">{{ request.user.username }}</span></li>
                             <li><a href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-
-        <div class="home-mine">
-        <div class="label-mine">
-            <h1>Welcome to University!</h1>
+        <h1 class="label-mine">Welcome to University!</h1>
+        <div class="text-center">
+            <h4>Would you like work with:</h4>
+            <button type="button" class="btn btn-home btn-lg" onclick="location.href='{% url 'students:students' %}'">Students</button>
+            <button type="button" class="btn btn-home btn-lg" onclick="location.href='{% url 'groups:groups' %}'">Groups</button>
         </div>
-{#        {% if request.user.username %}#}
-{#                    <div class="text-right">#}
-{#                    <p class="text-muted">You are <a href="{% url 'user_profile' %}">{{ request.user.username }}</a> <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a></p>#}
-{#                    </div>#}
-
-{#                <p>You are {{ request.user.username }}</p>#}
-                <h4>Would you like work with:</h4>
-                <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'students:students' %}'">Students</button>
-                <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='{% url 'groups:groups' %}'">Groups</button>
-            </div>
-        {% else %}
+    {% else %}
             <div class="bs-component">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -64,22 +54,23 @@
                     </div>
                 </nav>
             </div>
-            <div class="home-mine">
-                  <p>You are Guest. Please, sign in or sign up.</p>
-            </div>
-        {% endif %}
-{#        <div class="bs-component">#}
-{#            <nav class="navbar navbar-default">#}
-{#                <a class="navbar-footer" href="#">reference 1</a>#}
-{#                <a class="navbar-footer" href="#">reference 2</a>#}
-{#            </nav>#}
-{#        </div>#}
-
-        <div class="footer-mine">
-            <span>Created by:</span><a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Diana Agafonova</a>
-            <span>GitHub:</span><a class="footer-mine" href="https://github.com/DiankaDS/university">university</a>
+        <h4 class="label-mine">You are Guest. Please, sign in or sign up.</h4>
+        <div class="text-center">
+            <button type="button" class="btn btn-home btn-lg" onclick="location.href='{% url 'login' %}'">Sign in</button>
+            <button type="button" class="btn btn-home btn-lg" onclick="location.href='{% url 'reg' %}'">Sign up</button>
         </div>
-    </div>
-{#</div>#}
+        {% endif %}
+</div>
+        <div class="footer-mine">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <span>Created by:</span><a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Diana Agafonova</a>
+            </div>
+            <div class="col-md-4">
+                <span>GitHub:</span><a class="footer-mine" href="https://github.com/DiankaDS/university">university</a>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+</div>
 </body>
 </html>

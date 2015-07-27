@@ -8,8 +8,8 @@
     <link rel="stylesheet" href={% static "core.css" %}>
 </head>
 <body>
-<div class="body">
-    <div class="container">
+<div class="container">
+    <div class="body">
         <div class="bs-component">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -25,19 +25,19 @@
                     </div>
                 </nav>
         </div>
-        <div class="basic-mine">
-            <div class="label-mine">
-                <h1>REGISTRATION COMPLETE</h1>
-                <h1><a href="{% url 'login' %}">Sign in</a></h1>
+                <h1 class="label-mine">Registration Complete</h1>
+                <h4 class="text-center" style="margin-bottom: 0px"><a href="{% url 'login' %}">Sign in</a></h4>
+        </div>
+        <div class="footer-mine">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <span>Created by:</span><a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Diana Agafonova</a>
             </div>
+            <div class="col-md-4">
+                <span>GitHub:</span><a class="footer-mine" href="https://github.com/DiankaDS/university">university</a>
+            </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="bs-component">
-            <nav class="navbar navbar-default">
-                <a class="navbar-footer" href="#">reference 1</a>
-                <a class="navbar-footer" href="#">reference 2</a>
-            </nav>
-        </div>
-</div>
 </div>
 </body>
 </html>

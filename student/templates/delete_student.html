@@ -6,14 +6,12 @@
     <div class="container">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        <div class="label-mine">
-            <h1>Delete student {{ student.student_id }}</h1>
-        </div>
+        <h1 class="label-mine">Delete student {{ student.student_id }}</h1>
         <div class="message">
             <form action="" method="post">{% csrf_token %}
                 <p>Are you sure you want to delete {{ object }}?</p>
                 <button type="submit" class="btn btn-danger">Yes, delete it</button>
-                <button type="reset" class="btn btn-default" onclick="location.href='{% url 'students:students' %}'">No, don't delete it</button>
+                <button type="reset" class="btn btn-primary" onclick="location.href='{% url 'students:students' %}'">No, don't delete it</button>
             </form>
         </div>
     </div>

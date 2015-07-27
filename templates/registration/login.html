@@ -9,8 +9,8 @@
     <script src={% static "bootstrap/bootstrap.min.js" %}></script>
 </head>
 <body>
-<div class="body">
-    <div class="container">
+<div class="container">
+    <div class="body">
         <div class="bs-component">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -26,11 +26,8 @@
                     </div>
                 </nav>
         </div>
-    <div class="basic-mine">
-            <div class="label-mine">
-                <h1>Sign in to continue</h1>
-            </div>
-            <div class="form-mine">
+        <h1 class="label-mine">Sign in to continue</h1>
+        <div class="form-mine">
             <form method="post">{% csrf_token %}
                 {% if form.username.errors %}
                     <div class="form-group has-error">
@@ -61,13 +58,18 @@
                     <button type="submit" class="btn btn-success">Log in</button>
                 </div>
             </form>
-            </div>
-    </div>
-        <div class="footer-mine">
-            <a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Created by: Diana Agafonova</a>
-            <a class="footer-mine" href="https://github.com/DiankaDS/university">GitHub: university</a>
         </div>
     </div>
+        <div class="footer-mine">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <span>Created by:</span><a class="footer-mine" href="https://ua.linkedin.com/in/dianagafonova">Diana Agafonova</a>
+            </div>
+            <div class="col-md-4">
+                <span>GitHub:</span><a class="footer-mine" href="https://github.com/DiankaDS/university">university</a>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
 </div>
 </body>
 </html>

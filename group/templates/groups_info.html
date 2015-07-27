@@ -9,8 +9,6 @@
     </div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
-{#    <div class="col-md-1"></div>#}
-{#    <div class="col-md-10">#}
     <table class="table table-bordered">
             <tr class="warning">
                 <th>Student's id</th>
@@ -21,15 +19,12 @@
                     <td>{{ student.student_id }}</td>
                     <td><a href="{% url 'students:info' student.id %}">{{ student.first_name }} {{ student.last_name }} {{ student.middle_name }}</a></td>
             </tr>
-{#            <p>id {{ student.student_id }}: <a href="{% url 'students:info' student.id %}">{{ student.first_name }} {{ student.last_name }} {{ student.middle_name }}</a></p>#}
         {% endfor %}
     </table>
     <div class="text-center">
-        <button type="button" class="btn btn-default" onclick="location.href='{% url 'groups:update' group.id %}'">Update group</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='{% url 'groups:update' group.id %}'">Update group</button>
         <button type="button" class="btn btn-danger" onclick="location.href='{% url 'groups:delete' group.id %}'">Delete group</button>
     </div>
-{#    </div>#}
-{#    <div class="col-md-1"></div>#}
     </div>
     <div class="col-md-4"></div>
     </div>

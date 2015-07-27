@@ -3,9 +3,7 @@
     <title>Create student</title>
 {% endblock %}
 {% block body %}
-    <div class="label-mine">
-        <h1>Create new student</h1>
-    </div>
+        <h1 class="label-mine">Create new student</h1>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
         {% if form.first_name.errors %}
@@ -68,14 +66,12 @@
                 <input class="form-control" placeholder="student's id" name="student_id" {% if form.student_id.value %} value="{{ form.student_id.value }}" {% endif %}>
             </div>
         {% endif %}
-
             <div class="form-group has-error">
                 <p>Group:{{ form.group }}</p>
                 <div class="help-block with-errors">{{ form.group.errors }}</div>
             </div>
-
         <div class="text-center">
-            <button type="submit" class="btn btn-success">Create</button>
+            <button type="submit" class="btn btn-success" style="margin-bottom: 50px">Create</button>
         </div>
     </form>
     </div>

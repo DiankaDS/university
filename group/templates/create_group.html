@@ -3,9 +3,7 @@
     <title>Create group</title>
 {% endblock %}
 {% block body %}
-    <div class="label-mine">
-        <h1>Create new group</h1>
-    </div>
+        <h1 class="label-mine">Create new group</h1>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
         {% if form.group_name.errors %}
@@ -24,7 +22,6 @@
             <p>Elder:{{ form.elder }}</p>
             <div class="help-block with-errors">{{ form.elder.errors }}</div>
         </div>
-
         <div class="text-center">
             <button type="submit" class="btn btn-success">Create</button>
         </div>

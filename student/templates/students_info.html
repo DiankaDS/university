@@ -4,9 +4,7 @@
 {% endblock %}
 {% block body %}
     <div class="container">
-    <div class="label-mine">
-            <h1>Information about student {{ student.last_name }}</h1>
-        </div>
+            <h1 class="label-mine">Information about student {{ student.last_name }}</h1>
     <div class="col-md-4"></div>
     <div class="col-md-4">
         <table class="table table-bordered">
@@ -35,20 +33,8 @@
                 <td>{{ student.group }}</td>
             </tr>
         </table>
-{#    <div class="col-md-1"></div>#}
-{#    <div class="col-md-10">#}
-{#        <div class="basic-mine">#}
-{#            <p>Last name: {{ student.last_name }}</p>#}
-{#            <p>First name: {{ student.first_name }}</p>#}
-{#            <p>Middle name: {{ student.middle_name }}</p>#}
-{#            <p>Year of birth: {{ student.year_of_birth }}</p>#}
-{#            <p>Student id: {{ student.student_id }}</p>#}
-{#            <p>Group: {{ student.group }}</p>#}
-{#        </div>#}
-{#    </div>#}
-{#    <div class="col-md-1"></div>#}
         <div class="text-center">
-            <button type="button" class="btn btn-default" onclick="location.href='{% url 'students:update' student.id %}'">Update</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='{% url 'students:update' student.id %}'">Update</button>
             <button type="button" class="btn btn-danger" onclick="location.href='{% url 'students:delete' student.id %}'">Delete</button>
         </div>
     </div>
