@@ -23,7 +23,7 @@
                               <li><a href="{% url 'groups:groups' %}">Groups</a></li>
                               <li><a href="{% url 'students:create' %}">Create Student</a></li>
                               <li><a href="{% url 'groups:create' %}">Create Group</a></li>
-                              <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                              <li><a href="{% url 'user_profile' %}">Profile ({{ request.user.username }})</a></li>
                           </ul>
                           <ul class="nav navbar-nav navbar-right">
                               <li><a href="{% url 'logout' %}">Logout</a></li>
