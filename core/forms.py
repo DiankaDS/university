@@ -6,6 +6,7 @@ class RegistrationForm(forms.ModelForm):
     repeat_password = forms.CharField(widget=forms.PasswordInput,
                                       required=True)
     password = forms.CharField(widget=forms.PasswordInput, required=True)
+    # profile_image = forms.ImageField()
 
     class Meta:
         model = get_user_model()

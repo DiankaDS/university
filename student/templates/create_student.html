@@ -3,7 +3,7 @@
     <title>Create student</title>
 {% endblock %}
 {% block body %}
-        <h1 class="label-mine">Create new student</h1>
+    <h1 class="label-mine">Create new student</h1>
     <div class="form-mine">
     <form method="post">{% csrf_token %}
         {% if form.first_name.errors %}
