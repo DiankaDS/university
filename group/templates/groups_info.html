@@ -16,8 +16,8 @@
             </tr>
         {% for student in group.student_set.all %}
             <tr class="active">
-                    <td>{{ student.student_id }}</td>
-                    <td><a href="{% url 'students:info' student.id %}">{{ student.first_name }} {{ student.last_name }} {{ student.middle_name }}</a></td>
+                <td>{{ student.student_id }}</td>
+                <td><a href="{% url 'students:info' student.id %}">{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</a></td>
             </tr>
         {% endfor %}
     </table>
